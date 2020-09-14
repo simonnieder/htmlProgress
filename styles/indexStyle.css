@@ -6,32 +6,55 @@
 h1 {
   color: #262626;
   text-align: center;
-  font-size: 3rem;
+  font-size: 3.5rem;
+  padding: 10px;
 }
 
 a {
+  display: block;
   color: white;
   font-size: 2rem;
   text-decoration: none;
 }
 
 a:hover {
-  color: #547aa5;
+  color: #7ba3cf;
 }
 
+a::after {
+  content: "";
+}
 ul {
   list-style-type: none;
 }
 
 li {
-  padding: 25px;
+  position: relative;
+  padding: 20px;
   background-color: #333333;
 }
 
 p {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   padding: 10px;
   background-color: #333333;
   color: white;
   font-size: 1.5rem;
+}
+iframe {
+  border: 2px solid white;
+  min-width: 40vw;
+  min-height: 40vh;
+}
+
+svg {
+  margin: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  fill: white;
 }
