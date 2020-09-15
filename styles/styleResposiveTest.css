@@ -13,7 +13,7 @@ html {
 
 #parent {
   position: relative;
-  padding: 50px;
+  padding: 20px;
   justify-content: center;
   display: flex;
   flex-direction: row;
@@ -29,8 +29,9 @@ html {
 }
 
 #imgDiv {
-  width: 700px;
-  flex-shrink: 1;
+  width: 100%;
+  flex-shrink: 2;
+  padding: 0;
 }
 
 #img {
@@ -151,16 +152,22 @@ footer {
     position: relative;
   }
   #parent {
+    padding: 0;
     flex-wrap: wrap;
   }
   .child {
+  }
+  #imgDiv {
+    width: 100vw;
+    padding: 0;
+    margin: 0s;
   }
   .child2 {
     width: 100%;
     height: min-content;
   }
   #text {
-    padding-left: 0;
+    padding: 0 10px 20px 10px;
     width: 100%;
   }
 }
