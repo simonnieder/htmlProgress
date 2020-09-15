@@ -107,8 +107,7 @@ li:hover {
 
   align-self: center;
   flex-shrink: 1;
-  width: 350px;
-  min-height: 350px;
+  max-width: 450px;
   border-radius: 15px;
 }
 
@@ -148,6 +147,9 @@ footer {
 
 @media only screen and (max-width: 678px) {
   /* For mobile phones: */
+  ul {
+    position: relative;
+  }
   #parent {
     flex-wrap: wrap;
   }
@@ -155,6 +157,7 @@ footer {
   }
   .child2 {
     width: 100%;
+    height: min-content;
   }
   #text {
     padding-left: 0;
