@@ -12,6 +12,7 @@ html {
 }
 
 #parent {
+  position: relative;
   padding: 50px;
   justify-content: center;
   display: flex;
@@ -28,15 +29,14 @@ html {
 }
 
 #imgDiv {
-  background-image: url("/images/thunderstorm.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   width: 700px;
-  height: 400px;
   flex-shrink: 1;
 }
 
+#img {
+  width: 100%;
+  height: 100%;
+}
 p {
   font-size: 1em;
   font-family: Poppins, sans-serif;
@@ -146,13 +146,18 @@ footer {
   text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 979px) {
   /* For mobile phones: */
   #parent {
     flex-wrap: wrap;
   }
-
+  .child {
+  }
+  .child2 {
+    width: 100%;
+  }
   #text {
     padding-left: 0;
+    width: 100%;
   }
 }
