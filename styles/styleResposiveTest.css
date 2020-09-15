@@ -146,7 +146,7 @@ footer {
   text-align: center;
 }
 
-@media only screen and (max-width: 678px) {
+@media only screen and (max-width: 768px) {
   /* For mobile phones: */
   ul {
     position: relative;
