@@ -1,0 +1,78 @@
+#stats{
+    align-content: center;
+
+}
+
+header{
+    background: #262626;
+}
+
+nav{
+    text-decoration: none;
+    color: #d33f49;
+}
+
+nav a{
+    font-size: 24px;
+    color:#d33f49;
+    text-decoration: none;
+    padding: 5px;
+}
+
+nav img{
+    width:20px;
+    height:20px;
+}
+
+body{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#steckbrief{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #3d3d3d;
+}
+
+#infos{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin:0;
+    padding:0;
+    color: white;
+    text-align: right;
+    position: absolute;
+    top:121px;
+    left: 800px;
+}
+
+#infos img{
+    position:absolute;
+    top:133px;
+    left:140px;
+
+}
+
+#titles{
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    flex-direction: column;
+    margin:0;
+    color: white;
+    flex-wrap: nowrap;
+}
+
+#name{
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+}
+
+#name img{
+    position: absolute;
+    top:70px;
+    left:750px;
+}

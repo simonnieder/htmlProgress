@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+body {
+  background: #5c5c5c;
+  color: white;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+nav {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.page {
+  min-height: 100vh;
+  position: relative;
+}
+
+#calculator {
+  border-radius: 0.5rem;
+  min-width: 400px;
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  background: rgb(173, 173, 173);
+}
+
+#calculator label {
+  padding: 0px;
+  color: black;
+  min-height: 1rem;
+}
+
+#calculator_buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#calculator_buttons div {
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  background: #5c5c5c;
+  color: white;
+  text-align: center;
+  user-select: none;
+}
+
+#calculator_buttons div:hover {
+  background: rgb(231, 231, 231);
+  color: black;
+}
+
+#diashow {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+}
+
+#diashow img {
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 100vh;
+}
+
+#diashow #left {
+  cursor: pointer;
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%) scale(-1, 1);
+  fill: white;
+}
+
+#diashow #right {
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  fill: white;
+}
+
+#boldify {
+  margin: 0 0 0 20%;
+  padding: 10px;
+  background: lightgray;
+  user-select: none;
+  cursor: pointer;
+}
+#down {
+  fill: white;
+  cursor: pointer;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  transform: rotate(90deg);
+}
+p {
+  padding: 20px 20% 20px 20%;
+}

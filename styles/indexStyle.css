@@ -11,6 +11,9 @@ h1 {
 }
 
 a {
+  margin: 0 0 2px 0;
+  padding: 20px;
+  background-color: #333333;
   display: block;
   color: white;
   font-size: 2rem;
@@ -30,8 +33,6 @@ ul {
 
 li {
   position: relative;
-  padding: 20px;
-  background-color: #333333;
 }
 
 p {
