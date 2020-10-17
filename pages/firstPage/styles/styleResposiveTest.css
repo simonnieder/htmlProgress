@@ -138,7 +138,7 @@ footer {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: url("/images/thunderstorm.jpg");
+  background-image: url("../images/thunderstorm.jpg");
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 20vw;
