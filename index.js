@@ -1,3 +1,3 @@
 import Scrollbar from 'smooth-scrollbar';
 
-Scrollbar.init(document.querySelector('#my-scrollbar'), options);
+Scrollbar.init(document.querySelector('#smooth-scroll-wrapper'), options);
