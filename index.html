@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="de" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta
@@ -21,7 +21,7 @@
       <header class="page100">
         <h1>MY HTML PROGRESS</h1>
       </header>
-
+  
       <main class="page100">
         <ul>
           <li>
@@ -29,41 +29,37 @@
               >First Website</a
             >
             <a class="pages" href="/pages/colitics/index.html">Colitics</a>
-            <a class="pages" href="/pages/firstJS/index.html"
-              >First JavaScript</a
-            >
+            <a class="pages" href="/pages/firstJS/index.html">First JavaScript</a>
           </li>
         </ul>
       </main>
-
       <footer>
         <a href="https://www.instagram.com/simon.nwg" id="footer">
           &copy;2020 SIMON NIEDERWOLFSGRUBER
         </a>
       </footer>
     </div>
+    
     <script>
       const body = document.body,
-        scrollWrap = document.getElementsByClassName(
-          "smooth-scroll-wrapper"
-        )[0],
-        height = scrollWrap.getBoundingClientRect().height - 1,
-        speed = 0.04;
+          scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+          height = scrollWrap.getBoundingClientRect().height - 1,
+          speed = 0.04;
 
       var offset = 0;
 
       body.style.height = Math.floor(height) + "px";
 
       function smoothScroll() {
-        offset += (window.pageYOffset - offset) * speed;
+          offset += (window.pageYOffset - offset) * speed;
 
-        var scroll = "translateY(-" + offset + "px) translateZ(0)";
-        scrollWrap.style.transform = scroll;
+          var scroll = "translateY(-" + offset + "px) translateZ(0)";
+          scrollWrap.style.transform = scroll;
 
-        callScroll = requestAnimationFrame(smoothScroll);
+          callScroll = requestAnimationFrame(smoothScroll);
       }
 
       smoothScroll();
-    </script>
+  </script>
   </body>
 </html>
