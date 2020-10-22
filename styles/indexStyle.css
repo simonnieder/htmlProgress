@@ -24,8 +24,11 @@ header {
   align-items: center;
   justify-content: center;
 }
-body {
-  background: linear-gradient(225deg, #062846, #021424);
+
+#smooth-scroll-wrapper {
+  background: linear-gradient(0deg, #062846, #021424);
+  z-index: 1;
+  position: relative;
 }
 
 .pages {
@@ -59,22 +62,21 @@ footer > a {
   color: white;
   background-color: #031321;
   display: block;
-  padding: 20px;
+  padding: 40px;
   font-size: calc(0.75rem + 1vw);
 }
 footer > a:hover {
   color: #2196f3;
+}
+footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
   h1 {
     font-size: 8vw;
   }
-}
-.smooth-scroll-wrapper {
-  width: 100vw;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
 }

@@ -12,12 +12,13 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" type="text/css" href="styles/indexStyle.css" />
     <link rel="icon" type="image/png" href="/icon.png" />
   </head>
 
   <body>
-    <div class="smooth-scroll-wrapper">
+    <div id="smooth-scroll-wrapper">
       <header class="page100">
         <h1>MY HTML PROGRESS</h1>
       </header>
@@ -33,33 +34,13 @@
           </li>
         </ul>
       </main>
-      <footer>
-        <a href="https://www.instagram.com/simon.nwg" id="footer">
-          &copy;2020 SIMON NIEDERWOLFSGRUBER
-        </a>
-      </footer>
     </div>
-    
-    <script>
-      const body = document.body,
-          scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
-          height = scrollWrap.getBoundingClientRect().height - 1,
-          speed = 0.04;
-
-      var offset = 0;
-
-      body.style.height = Math.floor(height) + "px";
-
-      function smoothScroll() {
-          offset += (window.pageYOffset - offset) * speed;
-
-          var scroll = "translateY(-" + offset + "px) translateZ(0)";
-          scrollWrap.style.transform = scroll;
-
-          callScroll = requestAnimationFrame(smoothScroll);
-      }
-
-      smoothScroll();
-  </script>
+    <footer>
+      <a href="https://www.instagram.com/simon.nwg" id="footer">
+        &copy;2020 SIMON NIEDERWOLFSGRUBER
+      </a>
+    </footer>
+    <script type="module" src="/index.js"></script>
   </body>
+
 </html>
