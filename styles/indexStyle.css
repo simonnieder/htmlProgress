@@ -25,7 +25,7 @@ h1 {
   text-align: center;
   font-size: calc(1rem + 4vw);
   padding: 10px;
-  animation: size-up 0.5s forwards ease-out;
+  /*animation: size-up 1.5s forwards ease-out;*/
 }
 
 h2 {
@@ -34,16 +34,21 @@ h2 {
   text-align: center;
   font-size: calc(0.75rem + 1vw);
   padding: 10px;
-  animation: size-up 0.5s forwards ease-out;
+  /*animation: size-up 0.75s forwards ease-out;*/
   overflow: hidden;
 }
 
 @keyframes size-up {
   0% {
+    opacity: 0;
     transform: translateY(200%);
+  }
+  60% {
+    opacity: 0%;
   }
   100% {
     transform: translateY(0);
+    opacity: 100%;
   }
 }
 
