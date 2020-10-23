@@ -26,6 +26,15 @@ h1 {
   font-size: calc(1rem + 4vw);
   padding: 10px;
   animation: size-up 0.5s forwards ease-out;
+}
+
+h2 {
+  user-select: none;
+  color: white;
+  text-align: center;
+  font-size: calc(0.75rem + 1vw);
+  padding: 10px;
+  animation: size-up 0.5s forwards ease-out;
   overflow: hidden;
 }
 
@@ -39,6 +48,7 @@ h1 {
 }
 
 header {
+  flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,7 +102,7 @@ footer>a {
   text-decoration: none;
   text-align: center;
   color: white;
-  background-color: #031321;
+  background-color: #062846;
   display: block;
   padding: 40px;
   font-size: calc(0.75rem + 1vw);
@@ -105,5 +115,11 @@ footer>a:hover {
 @media only screen and (max-width: 768px) {
   .page100 {
     height: 50vh;
+  }
+  .pages {
+    font-size: calc(0.75rem + 3vw);
+  }
+  h1 {
+    font-size: calc(1.5rem + 5vw);
   }
 }
