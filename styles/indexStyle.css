@@ -3,12 +3,22 @@
   font-family: Monument;
 }
 
+@font-face {
+  src: url("/fonts/MonumentExtended-Black.ttf");
+  font-family: MonumentFat;
+}
+
 * {
   padding: 0;
   margin: 0;
   font-family: "Monument";
   text-transform: uppercase;
 }
+
+.page100 {
+  height: 100vh;
+}
+
 h1 {
   color: white;
   text-align: center;
@@ -16,14 +26,14 @@ h1 {
   padding: 10px;
 }
 
-.page100 {
-  height: 100vh;
-}
 header {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+
+/*#171717*/
 
 #smooth-scroll-wrapper {
   background: linear-gradient(0deg, #062846, #021424);
@@ -32,8 +42,8 @@ header {
 }
 
 .pages {
-  width: fit-content;
-  margin: 3% 0 0 10%;
+  width: 100%;
+  margin: 5% 0 0 10%;
   font-size: calc(1rem + 3vw);
   display: block;
   color: #2196f3;
@@ -42,21 +52,31 @@ header {
   left: 0;
   transition: all 0.2s ease-out;
 }
-.pages:hover {
+
+.hover-effect:hover .pages {
   left: 5%;
   color: #60b6fc;
   font-style: italic;
 }
-main > ul {
+
+main>ul {
   list-style-type: none;
-  padding-top: 100px;
 }
 
-main > li {
-  position: relative;
+#content {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
-footer > a {
+footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer>a {
   text-decoration: none;
   text-align: center;
   color: white;
@@ -65,18 +85,13 @@ footer > a {
   padding: 40px;
   font-size: calc(0.75rem + 1vw);
 }
-footer > a:hover {
+
+footer>a:hover {
   color: #2196f3;
-}
-footer {
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
-  h1 {
-    font-size: 8vw;
+  .page100 {
+    height: 50vh;
   }
 }
