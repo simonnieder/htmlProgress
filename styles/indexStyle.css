@@ -30,7 +30,7 @@ h1 {
 
 h2 {
   user-select: none;
-  color: white;
+  color: #2196f3;
   text-align: center;
   font-size: calc(0.75rem + 1vw);
   padding: 10px;
@@ -101,6 +101,7 @@ footer {
 footer>a {
   text-decoration: none;
   text-align: center;
+  /*color: white;*/
   color: white;
   background-color: #062846;
   display: block;
@@ -112,6 +113,37 @@ footer>a:hover {
   color: #2196f3;
 }
 
+#color_dropper_wrapper {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#color-dropper {
+  cursor: pointer;
+  fill: white;
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+}
+
+#color-dropper:hover {
+  animation: makeBigger 0.3s forwards;
+}
+
+@keyframes makeBigger {
+  from {
+    width: 50px;
+    height: 50px;
+  }
+  to {
+    width: 60px;
+    height: 60px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .page100 {
     height: 50vh;
@@ -121,5 +153,13 @@ footer>a:hover {
   }
   h1 {
     font-size: calc(1.5rem + 5vw);
+  }
+  #color-dropper {
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  #color-dropper:hover {
+    animation: inherit;
   }
 }
