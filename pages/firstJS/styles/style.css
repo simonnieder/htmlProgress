@@ -2,13 +2,15 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  font-family: "Poppins";
 }
 
 h1 {
-  font-family: "Poppins", sans-serif;
   text-align: center;
-  cursor: pointer;
-  user-select: none;
+}
+
+h3 {
+  text-align: center;
 }
 
 .page {
@@ -16,27 +18,78 @@ h1 {
   position: relative;
 }
 
+#frontPage {
+  background: url("../images/coding.jfif");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
 nav {
+  background: rgba(255, 255, 255, 0.808);
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  position: relative;
+  user-select: none;
+}
+
+#darkMode {
+  cursor: pointer;
+}
+
+#changeName {
+  cursor: pointer;
+}
+
+form>* {
+  font-size: 1.25rem;
+  margin: 3px;
+  padding: 4px;
+}
+
+label {
+  color: white;
+}
+
+input[type="submit"] {
+  background: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+form {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#greeting {
+  margin: 40vh 0 40vh 0;
+  background: rgba(255, 255, 255, 0.808);
+  padding: 20px;
+}
+
+#calculatorPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #calculator {
   border-radius: 0.5rem;
   min-width: 400px;
   font-size: 2rem;
-  font-family: "Poppins", sans-serif;
   width: 90%;
   max-width: 900px;
   margin: auto;
   background: lightgray;
 }
 
-#calculator label {
-  padding: 10px;
+#calculator>div>label {
+  text-align: right;
+  margin-left: 10px;
   min-height: 1rem;
+  width: 100%;
 }
 
 #calculator_buttons {
@@ -94,16 +147,38 @@ nav {
   transform: translateY(-50%);
 }
 
+.resize_on_hover:hover {
+  animation: makeBigger 0.3s forwards;
+}
+
+@keyframes makeBigger {
+  from {
+    width: 64px;
+    height: 64px;
+  }
+  to {
+    width: 77px;
+    height: 77px;
+  }
+}
+
 p {
-  padding: 20px 20% 20px 20%;
+  padding: 20px 10% 20px 10%;
+}
+
+#paragraphs {
+  display: flex;
+  align-items: center;
 }
 
 #boldify {
-  margin: 0 0 0 20%;
+  all: unset;
   padding: 10px;
   background: lightgray;
   user-select: none;
   cursor: pointer;
+  margin: 0 auto;
+  display: block;
 }
 
 #down {
@@ -112,4 +187,52 @@ p {
   bottom: 25px;
   right: 25px;
   transform: rotate(90deg);
+}
+
+#survey {
+  margin: 50px 0 0 200px;
+  font-size: 1.5rem;
+}
+
+#survey>div>label {
+  color: black;
+}
+
+#survey>label {
+  color: black;
+  display: block;
+}
+
+.page>label {
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  display: block;
+}
+
+#survey>div>input {
+  cursor: pointer;
+  -webkit-transform: scale(1.5);
+  /* Chrome, Safari, Opera */
+}
+
+#survey input[type="submit"] {
+  font-size: 1.25rem;
+  padding: 5px;
+}
+
+#radioOut {
+  text-decoration: underline;
+}
+
+#checkOut {
+  text-decoration: underline;
+}
+
+#menu_icon {
+  cursor: pointer;
+  z-index: 30;
+  position: fixed;
+  left: 10px;
+  top: 10px;
 }

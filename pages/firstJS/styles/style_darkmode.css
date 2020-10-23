@@ -2,28 +2,87 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
+
 body {
-  background: #5c5c5c;
+  background: #424242;
   color: white;
 }
+
 h1 {
   font-family: "Poppins", sans-serif;
   text-align: center;
-  cursor: pointer;
   user-select: none;
 }
 
+h3 {
+  text-align: center;
+}
+
 nav {
+  background: #5c5c5cbb;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   position: relative;
 }
 
+#darkMode {
+  cursor: pointer;
+}
+
+#changeName {
+  cursor: pointer;
+}
+
+form>* {
+  font-size: 1.25rem;
+  margin: 3px;
+  padding: 4px;
+}
+
+form input[type="submit"] {
+  background: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+form {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#greeting {
+  margin: 40vh 0 40vh 0;
+  background: #5c5c5cbb;
+  padding: 20px;
+}
+
+#calculatorPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .page {
   min-height: 100vh;
   position: relative;
+}
+
+.page>label {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  display: block;
+}
+
+#frontPage {
+  background: url("../images/coding.jfif");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 #calculator {
@@ -38,7 +97,7 @@ nav {
 }
 
 #calculator label {
-  padding: 0px;
+  margin-left: 20px;
   color: black;
   min-height: 1rem;
 }
@@ -99,13 +158,21 @@ nav {
   fill: white;
 }
 
+#paragraphs {
+  display: flex;
+  align-items: center;
+}
+
 #boldify {
-  margin: 0 0 0 20%;
+  all: unset;
   padding: 10px;
-  background: lightgray;
+  background: rgb(173, 173, 173);
   user-select: none;
   cursor: pointer;
+  margin: 0 auto;
+  display: block;
 }
+
 #down {
   fill: white;
   cursor: pointer;
@@ -114,6 +181,55 @@ nav {
   right: 25px;
   transform: rotate(90deg);
 }
+
+svg:hover {
+  animation: makeBigger 0.3s forwards;
+}
+
+@keyframes makeBigger {
+  from {
+    width: 64px;
+    height: 64px;
+  }
+  to {
+    width: 77px;
+    height: 77px;
+  }
+}
+
 p {
-  padding: 20px 20% 20px 20%;
+  padding: 20px 10% 20px 10%;
+}
+
+#survey {
+  margin: 50px 0 0 200px;
+  font-size: 1.5rem;
+}
+
+#survey>div>label {
+  color: white;
+}
+
+#survey>label {
+  color: white;
+  display: block;
+}
+
+#survey>div>input {
+  cursor: pointer;
+  -webkit-transform: scale(1.5);
+  /* Chrome, Safari, Opera */
+}
+
+#survey input[type="submit"] {
+  font-size: 1.25rem;
+  padding: 5px;
+}
+
+#radioOut {
+  text-decoration: underline;
+}
+
+#checkOut {
+  text-decoration: underline;
 }

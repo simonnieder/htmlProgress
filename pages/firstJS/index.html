@@ -1,71 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link id="style" rel="stylesheet" href="styles/style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Test</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link id="style" rel="stylesheet" href="./styles/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
-<body onload="startTime(), changeImage('next')">
-    <div class="page">
-        <nav>
-            <h1 id="date"></h1>
-            <h1 id="time"></h1>
-            <h1 id="darkMode">DARKMODE</h1>
-        </nav>
-    
-        <div style="height: 200px;"></div>
-    
-        <div id="calculator">
-                <label id="calculator_text" for=""></label>
-            <div id="calculator_buttons">
-                <div>(</div>
-                <div>)</div>
-                <div onclick="calculator('AC')">AC</div>
-                <div onclick="calculator('C')" >C</div>
-    
-                <div onclick="calculator(7)">7</div>
-                <div onclick="calculator(8)">8</div>
-                <div onclick="calculator(9)">9</div>
-                <div onclick="calculator('/')">/</div>
-    
-                <div onclick="calculator(4)">4</div>
-                <div onclick="calculator(5)">5</div>
-                <div onclick="calculator(6)">6</div>
-                <div onclick="calculator('x')">x</div>
-    
-                <div onclick="calculator(1)">1</div>
-                <div onclick="calculator(2)">2</div>
-                <div onclick="calculator(3)">3</div>
-                <div onclick="calculator('-')">-</div>
-    
-                <div onclick="calculator(0)">0</div>
-                <div ">.</div>
-                <div onclick="calculator('=')">=</div>
-                <div onclick="calculator('+')">+</div>
-            </div>
-        </div>
+
+<body onload="startTime(), changeImage('next'), welcome()">
+  <div class="page" id="frontPage">
+    <nav>
+      <h1 id="date"></h1>
+      <h1 id="time"></h1>
+      <h1 id="changeName">CHANGE NAME</h1>
+      <h1 id="darkMode">TOGGLE DARKMODE</h1>
+    </nav>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <input type="submit" name="button" value="Submit" onclick="greet(); return false;">
+    </form>
+    <h1 id="greeting" style="display: none;"></h1>
+  </div>
+  </div>
+  <div class="page" id="calculatorPage">
+    <div id="calculator">
+      <div style="min-height: 3rem;">
+        <label id="calculator_text" for=""></label>
+      </div>
+      <div id="calculator_buttons">
+        <div onclick="calculator('(')">(</div>
+        <div onclick="calculator(')')">)</div>
+        <div onclick="calculator('AC')">AC</div>
+        <div onclick="calculator('C')">C</div>
+
+        <div onclick="calculator(7)">7</div>
+        <div onclick="calculator(8)">8</div>
+        <div onclick="calculator(9)">9</div>
+        <div onclick="calculator('/')">/</div>
+
+        <div onclick="calculator(4)">4</div>
+        <div onclick="calculator(5)">5</div>
+        <div onclick="calculator(6)">6</div>
+        <div onclick="calculator('*')">x</div>
+
+        <div onclick="calculator(1)">1</div>
+        <div onclick="calculator(2)">2</div>
+        <div onclick="calculator(3)">3</div>
+        <div onclick="calculator('-')">-</div>
+
+        <div onclick="calculator(0)">0</div>
+        <div onclick="calculator('.')">.</div>
+        <div onclick="calculator('=')">=</div>
+        <div onclick="calculator('+')">+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="diashow">
+    <svg class="resize_on_hover" onclick="changeImage('prev')" id="left" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
+        <path
+          d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"
+        />
+      </svg>
+    <svg class="resize_on_hover" onclick="changeImage('next')" id="right" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
+        <path
+          d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"
+        />
+      </svg>
+
+    <img id="diashow_img" src="./images/lx.jpg" alt="" />
+  </div>
+
+  <div class="page" id="paragraphs">
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, possimus inventore incidunt accusantium corrupti sunt ratione ab perspiciatis voluptates id. Nesciunt inventore eaque tempore alias. Nemo iure quas facilis expedita voluptatibus fuga ducimus
+        adipisci eaque, culpa hic illo ipsam minus optio non illum dolorem. Accusamus nobis eligendi ullam adipisci vero quae commodi veritatis deserunt eaque, cumque, voluptas eius consectetur odio ratione. Ab exercitationem placeat rerum consequatur
+        aut neque illo nulla nemo commodi dolores voluptatem, harum asperiores est dolore id natus sint tempore magnam aspernatur deleniti perspiciatis magni sunt. Necessitatibus quia impedit vel quos iste atque cumque officia rerum praesentium sunt?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, possimus inventore incidunt accusantium corrupti sunt ratione ab perspiciatis voluptates id. Nesciunt inventore eaque tempore alias. Nemo iure quas facilis expedita voluptatibus fuga ducimus
+        adipisci eaque, culpa hic illo ipsam minus optio non illum dolorem. Accusamus nobis eligendi ullam adipisci vero quae commodi veritatis deserunt eaque, cumque, voluptas eius consectetur odio ratione. Ab exercitationem placeat rerum consequatur
+        aut neque illo nulla nemo commodi dolores voluptatem, harum asperiores est dolore id natus sint tempore magnam aspernatur deleniti perspiciatis magni sunt. Necessitatibus quia impedit vel quos iste atque cumque officia rerum praesentium sunt?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, possimus inventore incidunt accusantium corrupti sunt ratione ab perspiciatis voluptates id. Nesciunt inventore eaque tempore alias. Nemo iure quas facilis expedita voluptatibus fuga ducimus
+        adipisci eaque, culpa hic illo ipsam minus optio non illum dolorem. Accusamus nobis eligendi ullam adipisci vero quae commodi veritatis deserunt eaque, cumque, voluptas eius consectetur odio ratione. Ab exercitationem placeat rerum consequatur
+        aut neque illo nulla nemo commodi dolores voluptatem, harum asperiores est dolore id natus sint tempore magnam aspernatur deleniti perspiciatis magni sunt. Necessitatibus quia impedit vel quos iste atque cumque officia rerum praesentium sunt?
+      </p>
+      <button id="boldify" onclick="textFormat()"><b>BOLDIFY TEXT</b></button>
+    </div>
+  </div>
+
+
+  <div class="page">
+    <label id="browserName"></label>
+    <label id="browserLang"></label>
+    <div id="survey">
+      <div>
+        <label for="">How do you like my website?</label>
+      </div>
+      <div>
+        <input class="radio1" type="radio" name="One">
+        <label for="">Not at all</label>
+      </div>
+      <div>
+        <input class="radio1" type="radio" name="One">
+        <label for="">A little bit</label>
+      </div>
+      <div>
+        <input class="radio1" type="radio" name="One">
+        <label for="">I like it</label>
+      </div>
+      <div>
+        <input class="radio1" type="radio" name="One">
+        <label for="">I love it</label>
+      </div>
+      <input type="submit" name="button" value="Submit" onclick="survey1(); return false;">
+      <label id="radioOut" for=""></label>
+
+      <div>
+        <label for="">How would you describe yourself?</label>
+      </div>
+
+      <div>
+        <input class="check1" type="checkbox" name="cocky">
+        <label for="">cocky</label>
+      </div>
+      <div>
+        <input class="check1" type="checkbox" name="hot">
+        <label for="">hot</label>
+      </div>
+      <div>
+        <input class="check1" type="checkbox" name="cool">
+        <label for="">cool</label>
+      </div>
+      <div>
+        <input class="check1" type="checkbox" name="lost">
+        <label for="">lost</label>
+      </div>
+      <input type="submit" name="button" value="Submit" onclick="survey2(); return false;">
+      <label id="checkOut" for=""></label>
     </div>
 
-    <div class="page" id="diashow">
-        <svg onclick="changeImage('prev')" id="left" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" ><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"/></svg>
-        <svg onclick="changeImage('next')" id="right" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"/></svg>
-
-        <img id="diashow_img" src="images/lx.jpg" alt="">
-    </div>
-
-    <div class="page">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio facilis adipisci temporibus blanditiis necessitatibus mollitia tempore minima magni eaque nihil. Neque assumenda eum expedita dicta. Quo, ad maiores repudiandae minima nesciunt voluptatem ab atque dolorem! Quidem excepturi delectus facilis nesciunt cupiditate iure, sint dicta sapiente quasi rerum, blanditiis, amet et perspiciatis itaque qui adipisci magni quis beatae libero aliquam. Quas veniam a ullam eaque nobis perspiciatis incidunt distinctio, magnam vel quo nisi? Ut ipsum dignissimos consequuntur a ducimus sunt doloremque qui delectus atque explicabo deleniti magnam laudantium culpa magni tempora numquam incidunt dolorem laborum, pariatur omnis aperiam, reiciendis, animi ab? Nihil necessitatibus vitae atque repellat omnis quam rerum iste, labore deserunt cum molestiae exercitationem quisquam inventore harum dolores. Odio numquam omnis delectus quidem tempora aut voluptatibus, fugit fugiat earum alias repudiandae sit rerum dolor! Recusandae fugit quia ratione repellat tempore, officiis facilis. Nam quo, iusto dolore, maiores asperiores sint optio architecto nostrum id saepe repudiandae deserunt atque, aut vel aliquid fugit totam quod. Quia atque ipsa officia sapiente maxime esse, tenetur et laboriosam non aliquam dolorem quibusdam neque amet enim totam dolorum. Facilis natus deleniti exercitationem tenetur ullam magnam suscipit mollitia, perspiciatis reprehenderit laborum autem. Eaque repellat voluptatem placeat debitis!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio facilis adipisci temporibus blanditiis necessitatibus mollitia tempore minima magni eaque nihil. Neque assumenda eum expedita dicta. Quo, ad maiores repudiandae minima nesciunt voluptatem ab atque dolorem! Quidem excepturi delectus facilis nesciunt cupiditate iure, sint dicta sapiente quasi rerum, blanditiis, amet et perspiciatis itaque qui adipisci magni quis beatae libero aliquam. Quas veniam a ullam eaque nobis perspiciatis incidunt distinctio, magnam vel quo nisi? Ut ipsum dignissimos consequuntur a ducimus sunt doloremque qui delectus atque explicabo deleniti magnam laudantium culpa magni tempora numquam incidunt dolorem laborum, pariatur omnis aperiam, reiciendis, animi ab? Nihil necessitatibus vitae atque repellat omnis quam rerum iste, labore deserunt cum molestiae exercitationem quisquam inventore harum dolores. Odio numquam omnis delectus quidem tempora aut voluptatibus, fugit fugiat earum alias repudiandae sit rerum dolor! Recusandae fugit quia ratione repellat tempore, officiis facilis. Nam quo, iusto dolore, maiores asperiores sint optio architecto nostrum id saepe repudiandae deserunt atque, aut vel aliquid fugit totam quod. Quia atque ipsa officia sapiente maxime esse, tenetur et laboriosam non aliquam dolorem quibusdam neque amet enim totam dolorum. Facilis natus deleniti exercitationem tenetur ullam magnam suscipit mollitia, perspiciatis reprehenderit laborum autem. Eaque repellat voluptatem placeat debitis!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio facilis adipisci temporibus blanditiis necessitatibus mollitia tempore minima magni eaque nihil. Neque assumenda eum expedita dicta. Quo, ad maiores repudiandae minima nesciunt voluptatem ab atque dolorem! Quidem excepturi delectus facilis nesciunt cupiditate iure, sint dicta sapiente quasi rerum, blanditiis, amet et perspiciatis itaque qui adipisci magni quis beatae libero aliquam. Quas veniam a ullam eaque nobis perspiciatis incidunt distinctio, magnam vel quo nisi? Ut ipsum dignissimos consequuntur a ducimus sunt doloremque qui delectus atque explicabo deleniti magnam laudantium culpa magni tempora numquam incidunt dolorem laborum, pariatur omnis aperiam, reiciendis, animi ab? Nihil necessitatibus vitae atque repellat omnis quam rerum iste, labore deserunt cum molestiae exercitationem quisquam inventore harum dolores. Odio numquam omnis delectus quidem tempora aut voluptatibus, fugit fugiat earum alias repudiandae sit rerum dolor! Recusandae fugit quia ratione repellat tempore, officiis facilis. Nam quo, iusto dolore, maiores asperiores sint optio architecto nostrum id saepe repudiandae deserunt atque, aut vel aliquid fugit totam quod. Quia atque ipsa officia sapiente maxime esse, tenetur et laboriosam non aliquam dolorem quibusdam neque amet enim totam dolorum. Facilis natus deleniti exercitationem tenetur ullam magnam suscipit mollitia, perspiciatis reprehenderit laborum autem. Eaque repellat voluptatem placeat debitis!</p>
-        <button id="boldify" onclick="textFormat()"><b>BOLDIFY TEXT</b></button>
-    </div>
-    
+  </div>
 
 
-    <svg onclick="scrollFunc()" id="down" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" ><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"/></svg>
+  </div>
 
+  <svg class="resize_on_hover" onclick="scrollFunc()" id="down" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
+      <path
+        d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"
+      />
+    </svg>
 </body>
-<script src="scripts/script.js"></script>
+<script src="./scripts/script.js"></script>
+
 </html>
