@@ -58,14 +58,14 @@ a:hover {
   font-size: calc(0.75rem + 1vw);
   padding: 7px;
   margin: 30px;
-  color: #2196f3;
-  border: 2px solid #2196f3;
+  color: #60b6fc;
+  border: 2px solid #60b6fc;
   transition: all 0.3s;
 }
 
 #frontPage #explore:hover {
-  color: #60b6fc;
-  border: 2px solid #60b6fc;
+  color: #2196f3;
+  border: 2px solid #2196f3;
 }
 
 h1 {
