@@ -63,7 +63,12 @@ header {
 /*#171717*/
 
 #smooth-scroll-wrapper {
-  background: linear-gradient(0deg, #062846, #021424);
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#021424+0,062846+100 */
+  background: #021424;
+  background: -moz-linear-gradient(top, #021424 0%, #062846 100%);
+  background: -webkit-linear-gradient(top, #021424 0%, #062846 100%);
+  background: linear-gradient(to bottom, #021424 0%, #062846 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#021424', endColorstr='#062846', GradientType=0);
   z-index: 1;
   position: relative;
 }
@@ -154,7 +159,7 @@ footer>a:hover {
     height: 100vh;
   }
   .pages {
-    margin: 20% 0 20% 10%;
+    margin: 40% 0 40% 10%;
     font-size: calc(0.75rem + 3vw);
   }
   h1 {
@@ -167,5 +172,8 @@ footer>a:hover {
   }
   #color-dropper:hover {
     animation: inherit;
+  }
+  #content {
+    align-items: baseline;
   }
 }

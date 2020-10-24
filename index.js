@@ -34,7 +34,6 @@ function cycleColors() {
       } else {
         updatingColor++;
       }
-      console.log(updatingColor)
       document.body.style.filter = "hue-rotate(" + updatingColor + "deg)";
     }
   }
