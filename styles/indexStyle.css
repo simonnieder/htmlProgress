@@ -121,6 +121,9 @@ footer>a {
   a {
     font-size: calc(1rem + 1vw);
   }
+  #frontPage #explore {
+    font-size: calc(0.75rem + 5vw);
+  }
 }
 
 @media only screen and (max-width: 350px) {

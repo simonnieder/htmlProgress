@@ -1,4 +1,4 @@
-var colors = [0, 30, 60, 90, 120, 150, 300, 330]
+var colors = [0, 30, 60, 90, 120, 300, 330]
 var colorIndex = 0;
 
 function randomColor() {
