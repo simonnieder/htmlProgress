@@ -1,0 +1,110 @@
+@font-face {
+  src: url("/fonts/MonumentExtended-Regular.ttf");
+  font-family: Monument;
+}
+
+* {
+  font-family: Monument;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.page100 {
+  z-index: 1;
+  min-height: 100vh;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#021424+0,062846+100 */
+  background: #021424;
+  background: -moz-linear-gradient(top, #021424 0%, #062846 100%);
+  background: -webkit-linear-gradient(top, #021424 0%, #062846 100%);
+  background: linear-gradient(to bottom, #021424 0%, #062846 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#021424', endColorstr='#062846', GradientType=0);
+  z-index: 1;
+}
+
+#nav {
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#color-dropper {
+  cursor: pointer;
+  fill: white;
+  width: 50px;
+  height: 50px;
+}
+
+#color-dropper:hover {
+  fill: #2196f3;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: calc(0.75rem + 1vw);
+}
+
+a:hover {
+  color: #2196f3;
+}
+
+.pages {
+  width: 100%;
+  margin: 15% 0 15% 10%;
+  font-size: calc(1rem + 3vw);
+  display: block;
+  color: #2196f3;
+  text-decoration: none;
+  position: relative;
+  left: 0;
+  transition: all 0.2s ease-out;
+}
+
+.hover-effect2:hover .pages {
+  left: 5%;
+  color: #60b6fc;
+  font-style: italic;
+}
+
+main>ul {
+  list-style-type: none;
+}
+
+#content {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+footer {
+  z-index: -1;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer>a {
+  text-align: center;
+  background-color: #062846;
+  display: block;
+  padding: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .pages {
+    font-size: calc(0.75rem + 3vw);
+  }
+  #color-dropper {
+    width: 40px;
+    height: 40px;
+  }
+}

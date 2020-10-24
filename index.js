@@ -2,11 +2,17 @@ var colors = [0, 30, 60, 90, 120, 150, 300, 330]
 var colorIndex = 0;
 
 function randomColor() {
-  var color = Math.floor(Math.random() * colors.length);
-  document.body.style.filter = "hue-rotate(" + colors[color] + "deg)";
-  colorIndex = color;
+  console.log(getCookie("bg-color"))
+  if (getCookie("bg-color") != undefined) {
+    document.body.style.filter = "hue-rotate(" + colors[getCookie("bg-color")] + "deg)";
+    colorIndex = getCookie("bg-color");
+  } else {
+    var color = Math.floor(Math.random() * colors.length);
+    document.body.style.filter = "hue-rotate(" + colors[color] + "deg)";
+    colorIndex = color;
+    setCookie("bg-color", colorIndex);
+  }
 }
-
 
 function cycleColors() {
   var oldColor = colors[colorIndex]
@@ -37,4 +43,16 @@ function cycleColors() {
       document.body.style.filter = "hue-rotate(" + updatingColor + "deg)";
     }
   }
+  setCookie("bg-color", colorIndex);
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift().split(";")[0];
+}
+
+function setCookie(cookiename, value) {
+  document.cookie = cookiename + "=" + value + ";domain=;path=/";
+  console.log(value);
 }

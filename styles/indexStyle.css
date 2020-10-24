@@ -3,11 +3,6 @@
   font-family: Monument;
 }
 
-@font-face {
-  src: url("/fonts/MonumentExtended-Black.ttf");
-  font-family: MonumentFat;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -19,13 +14,66 @@
   height: 100vh;
 }
 
+#nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: calc(0.75rem + 1vw);
+}
+
+a:hover {
+  color: #2196f3;
+}
+
+#color-dropper {
+  cursor: pointer;
+  fill: white;
+  width: 50px;
+  height: 50px;
+}
+
+#color-dropper:hover {
+  fill: #2196f3;
+}
+
+#frontPage {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#frontPage #explore {
+  font-size: calc(0.75rem + 1vw);
+  padding: 7px;
+  margin: 30px;
+  color: #2196f3;
+  border: 2px solid #2196f3;
+  transition: all 0.3s;
+}
+
+#frontPage #explore:hover {
+  color: #60b6fc;
+  border: 2px solid #60b6fc;
+}
+
 h1 {
   user-select: none;
   color: white;
   text-align: center;
   font-size: calc(1rem + 4vw);
   padding: 10px;
-  /*animation: size-up 1.5s forwards ease-out;*/
 }
 
 h2 {
@@ -34,35 +82,10 @@ h2 {
   text-align: center;
   font-size: calc(0.75rem + 1vw);
   padding: 10px;
-  /*animation: size-up 0.75s forwards ease-out;*/
   overflow: hidden;
 }
 
-@keyframes size-up {
-  0% {
-    opacity: 0;
-    transform: translateY(200%);
-  }
-  60% {
-    opacity: 0%;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 100%;
-  }
-}
-
-header {
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/*#171717*/
-
-#smooth-scroll-wrapper {
+#wrapper {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#021424+0,062846+100 */
   background: #021424;
   background: -moz-linear-gradient(top, #021424 0%, #062846 100%);
@@ -73,34 +96,6 @@ header {
   position: relative;
 }
 
-.pages {
-  width: 100%;
-  margin: 5% 0 5% 10%;
-  font-size: calc(1rem + 3vw);
-  display: block;
-  color: #2196f3;
-  text-decoration: none;
-  position: relative;
-  left: 0;
-  transition: all 0.2s ease-out;
-}
-
-.hover-effect:hover .pages {
-  left: 5%;
-  color: #60b6fc;
-  font-style: italic;
-}
-
-main>ul {
-  list-style-type: none;
-}
-
-#content {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
 footer {
   position: sticky;
   bottom: 0;
@@ -109,71 +104,30 @@ footer {
 }
 
 footer>a {
-  text-decoration: none;
   text-align: center;
-  /*color: white;*/
-  color: white;
   background-color: #062846;
   display: block;
   padding: 40px;
-  font-size: calc(0.75rem + 1vw);
-}
-
-footer>a:hover {
-  color: #2196f3;
-}
-
-#color_dropper_wrapper {
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-#color-dropper {
-  cursor: pointer;
-  fill: white;
-  width: 50px;
-  height: 50px;
-  margin: 20px;
-}
-
-#color-dropper:hover {
-  animation: makeBigger 0.3s forwards;
-}
-
-@keyframes makeBigger {
-  from {
-    width: 50px;
-    height: 50px;
-  }
-  to {
-    width: 60px;
-    height: 60px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
-  .page100 {
-    height: 100vh;
-  }
-  .pages {
-    margin: 40% 0 40% 10%;
-    font-size: calc(0.75rem + 3vw);
-  }
   h1 {
     font-size: calc(1.5rem + 5vw);
   }
   #color-dropper {
-    margin: 10px;
     width: 40px;
     height: 40px;
   }
-  #color-dropper:hover {
-    animation: inherit;
+  a {
+    font-size: calc(1rem + 1vw);
   }
-  #content {
-    align-items: baseline;
+}
+
+@media only screen and (max-width: 350px) {
+  h1 {
+    font-size: calc(1.25em + 5vw);
+  }
+  a {
+    font-size: calc(0.75rem + 1vw);
   }
 }
