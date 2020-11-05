@@ -7,9 +7,9 @@
   padding: 0;
   margin: 0;
   font-family: "Monument";
+  font-style: italic;
   text-transform: uppercase;
 }
-
 .page100 {
   height: 100vh;
 }
@@ -30,6 +30,7 @@ a {
   text-decoration: none;
   color: white;
   font-size: calc(0.75rem + 1vw);
+  transition: all 0.3s;
 }
 
 a:hover {
@@ -41,6 +42,8 @@ a:hover {
   fill: white;
   width: 50px;
   height: 50px;
+  fill: white;
+  transition: all 0.3s;
 }
 
 #color-dropper:hover {
@@ -55,17 +58,20 @@ a:hover {
 }
 
 #frontPage #explore {
+  border-radius: 5px;
+  vertical-align: middle;
   font-size: calc(0.75rem + 1vw);
   padding: 7px;
   margin: 30px;
-  color: #60b6fc;
-  border: 2px solid #60b6fc;
-  transition: all 0.3s;
+  color: #2196f3;
+  border: 2px solid #2196f3;
+  transition: all 0.5s ease-out;
 }
 
 #frontPage #explore:hover {
-  color: #2196f3;
-  border: 2px solid #2196f3;
+  box-shadow: 350px 0 0 0 #1a76c0 inset;
+  border: 2px solid #1a76c0;
+  color: white;
 }
 
 h1 {
@@ -91,7 +97,7 @@ h2 {
   background: -moz-linear-gradient(top, #021424 0%, #062846 100%);
   background: -webkit-linear-gradient(top, #021424 0%, #062846 100%);
   background: linear-gradient(to bottom, #021424 0%, #062846 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#021424', endColorstr='#062846', GradientType=0);
+  /* filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#021424', endColorstr='#062846', GradientType=0); */
   z-index: 1;
   position: relative;
 }
@@ -103,7 +109,7 @@ footer {
   width: 100%;
 }
 
-footer>a {
+footer > a {
   text-align: center;
   background-color: #062846;
   display: block;
